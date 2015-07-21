@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>The Rules &mdash; Smallpeice Computing and Microelectronics Summer School 2015</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -15,7 +15,62 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+
+		<style>
+			.reveal section img.no-frame {
+				background: none;
+				border: none;
+			}
+
+			.reveal section .floating-title {
+				position: absolute;
+				top: 10%;
+				left: 0;
+				right: 0;
+
+				opacity: 0.8;
+			}
+
+			.image-frame {
+				position: relative;
+			}
+
+			.image-frame .ex-score {
+				position: absolute;
+
+				font-size: 3.77em;
+
+				margin: 0 0 20px 0;
+				font-family: 'Montserrat', Impact, sans-serif;
+				font-weight: normal;
+				line-height: 1.2;
+				letter-spacing: -0.03em;
+				word-wrap: break-word;
+			}
+
+			.black {
+				color:#000000;
+				text-shadow:0 0 2px white,0 0 2px white,0 0 2px white,0 0 2px white;
+			}
+
+			.blue {color:#1b91ff}
+			.green {color:#17ff2e}
+			.red {color:#ff2c2d}
+
+			/* Hack around Gecko bug 410959 (https://bugzilla.mozilla.org/show_bug.cgi?id=410959) */
+			.reveal table th, .reveal table tbody {
+				border-bottom: 2px solid rgba(255,255,255, 0.75);
+			}
+			.reveal table td {
+				border-right: 2px solid rgba(255,255,255, 0.75);
+			}
+			.reveal table td:last-child { border-right: none; }
+			.reveal table td {
+				border-bottom: none;
+			}
+		</style>
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -35,348 +90,253 @@
 	</head>
 
 	<body>
-
 		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+					<h1>The Rules</h1>
 				</section>
 
 				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
+					<h2>In the Rulebook</h2>
+					<p><a href="http://example.com/rules.pdf">TODO: a link (URL visible)</a></p>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<li>The rules of the game</li>
+						<li>Safety regulations</li>
+						<li>Tournament format</li>
+						<li>Detailed specifications</li>
 					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					<aside class=notes>
+						If in doubt, consult the rulebook.
 					</aside>
 				</section>
 
 				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+					<section>
+						<h1>Two Colours</h1>
+						<h3>A Game of Tokens</h3>
+					</section>
+					<section>
+						<h2 class=floating-title>The Arena</h2>
+						<img class=no-frame src=img/arena.svg>
+						<aside class=notes>
+							Point out markers on walls (known locations), raised central area,
+							robot starting locations and zones.
+
+							Note that there will be linesmen in the arena.
+						</aside>
+					</section>
+					<section>
+						<h2>Tokens</h2>
+						<p>110mm ± 10mm per side</p>
+						<img class=no-frame src=img/tokens.jpg>
+						<aside class=notes>
+							For now, just say that the markers are easy for a robot to recognise.
+						</aside>
+					</section>
+					<section>
+						<h2>Scoring</h2>
+						<p>Each token, gold or silver, <em>entirely</em> in your zone is worth <strong>2 points</strong>.</p>
+						<p class="fragment zoom-in" style="font-size: larger">
+							<em>However:</em>
+						</p>
+						<p class="fragment">
+							If you have <strong>both</strong> gold and silver tokens in your zone,
+							<strong>your points are halved</strong>.
+						</p>
+						<p class="fragment">
+							There is also <strong>1 point</strong> for moving from your starting position.
+						</p>
+					</section>
+					<section>
+						<h2 class=floating-title>Example</h2>
+						<div class=image-frame>
+							<img class=no-frame src=img/game-example.svg>
+							<span class="fragment ex-score black" style="top:0;left:0">1</span>
+							<span class="fragment ex-score blue" style="top:0;right:0">5</span>
+							<span class="fragment ex-score green" style="bottom:0;right:0">4</span>
+							<span class="fragment ex-score red" style="bottom:0;left:0">7</span>
+						</div>
+					</section>
+					<section>
+						<h2>Example</h2>
+						<ul>
+							<li><span class=black>
+									Black</span>: no tokens, moved; 1 point.</li>
+							<li><span class=blue>Blue</span>: 2 silver tokens, moved; 5 points.</li>
+							<li><span class=green>Green</span>: 1 gold and 2 silver tokens, moved; 4 points.</li>
+							<li><span class=red>Red</span>: 3 gold and <strong>no silver</strong> tokens, moved; 7 points.</li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
+					<section>
+						<h1>Regulations</h1>
+						<h3>Autonomy, safety, size, sportsmanship</h3>
+					</section>
+					<section>
+						<h2>Autonomy</h2>
+						<p>
+							Once the start button has been pressed, your robot must be completely autonomous.
+							<strong>No remote control systems</strong> are allowed.
+						</p>
+					</section>
+					<section>
+						<h2>Safety</h2>
+						<p> Your robot must pass a safety inspection before competing. </p>
+						<p> Things we'll be checking for include: </p>
+						<ul>
+							<li>Sharp edges</li>
+							<li>Loose components</li>
+							<li>Inadequate battery protection</li>
+						</ul>
+						<div class=stretch>
+							<img class=fragment src="img/happy-lipo.png">
+						</div>
+						<aside class=notes>
+							This is a LiPo, and *this*...
+						</aside>
+					</section>
+					<section data-background="img/unhappy-lipo.gif">
+						<h3>Unhappy Batteries</h3>
+						<aside class=notes>
+							...is an unhappy LiPo.
+						</aside>
+					</section>
+					<section>
+						<h3>Happy Batteries</h3>
+						<p> Make sure that your battery is: </p>
+						<ul>
+							<li>securely held in place;</li>
+							<li>adequately protected from damage;</li>
+							<li>only connected directly to the power board.</li>
+						</ul>
+						<p class=fragment>
+							Also, <strong>the power switch must be easily accessible</strong>
+							on the top of the robot.
+						</p>
+					</section>
+					<section>
+						<h2>Size</h2>
+						<p>
+							<em>At the start of the match</em>, your robot must fit inside
+							<strong>a cube with sides 500mm long.</strong>
+						</p>
+						<p>
+							However, after you press start, the robot may expand beyond this limit.
+						</p>
+					</section>
+					<section>
+						<h2>Sportsmanship</h2>
+						<p>
+							Two Colours is a <strong>non-contact game</strong>. Please <em>try</em>
+							to avoid other robots.
+						</p>
+						<p>
+							Avoid damaging the arena, linesmen, or other robots.
+						</p>
+						<p>
+							Generally, be a good sport.
+						</p>
+						<aside class=notes>
+							We understand that most collisions are accidental.
+							Protection can be mechanical (e.g. foam), not just in software.
+						</aside>
+					</section>
 				</section>
 
 				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
+					<section>
+						<h1>Tournament Structure</h1>
+						<h3>Two phases: the league and the knockouts.</h3>
+					</section>
+
+					<section>
+						<h2>Matches</h2>
+						<p>
+							Each match is <strong>three minutes</strong> long, and involves
+							<strong>four robots</strong>.
+						</p>
+						<p class=fragment>
+							Present your robot to a match official <em>at least</em> one minute before your
+							match is due to start. You will be able to place your robot in the arena.
+						</p>
+						<p class=fragment>
+							At the end of the match, only enter the arena when instructed, to allow
+							the linesmen to record the scores.
+						</p>
+
+						<aside class=notes>
+							Robots will automatically stop after three minutes.
+						</aside>
+					</section>
+
+					<section>
+						<h2>The League</h2>
+						<p>Each team will face every other team at least once.</p>
+						<p>League points are awarded based on position in each match.</p>
+						<table>
+							<thead>
+								<tr>
+									<th>Position</th>
+									<th>League points</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr> <td>1st</td> <td>8</td> </tr>
+								<tr> <td>2nd</td> <td>6</td> </tr>
+								<tr> <td>3rd</td> <td>4</td> </tr>
+								<tr> <td>4th</td> <td>2</td> </tr>
+								<tr> <td>Absent</td> <td>0</td> </tr>
+							</tbody>
+						</table>
+						<aside class=notes>
+							Note that just attending a match gets you league points.
+						</aside>
+					</section>
+					<section>
+						<h2>The Knockouts</h2>
+						<ul>
+							<li> Two quarter-finals, with one team eliminated in each. </li>
+							<li> Two semi-finals, with two teams eliminated in each. </li>
+							<li> The grand final. </li>
+						</ul>
+						<p>
+							All teams go on to the knockouts, but the top two from the league go straight
+							to the semi-finals.
+						</p>
+					</section>
 				</section>
 
 				<section>
-					<h2>Much more</h2>
+					<h2>Summary</h2>
 					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
+						<li>Collect tokens of the same colour.</li>
+						<li>Be good sports.</li>
+						<li>Learn from the league to conquer the knockouts.</li>
+						<li>Have fun!</li>
 					</ul>
 				</section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+				<section>
+					<h2>Any questions?</h2>
+					<a href="http://example.com/game-slides/">TODO: slides link (showing URL)</a>
+					<p style="font-size: small">
+						<a href="https://www.flickr.com/photos/lenzgr/5178120217">"Quadrocopter: LiPo Battery Turnigy 3S (11.1 V), 2200mAh, 25-35 C"</a>
+						&copy; 2010 Lenz Grimmer
+						<a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>
+						(background removed).
+						<br>
+						<a href="https://www.flickr.com/photos/howiegoing/7181627207/">photo of tokens</a>
+						&copy; 2012 Howard Buck
+						<a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>.
 					</p>
+
+					<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+						<img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png">
+					</a>
 				</section>
-
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
@@ -391,6 +351,8 @@ Reveal.addEventListener( 'customevent', function() {
 				progress: true,
 				history: true,
 				center: true,
+
+				margin: 0,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
